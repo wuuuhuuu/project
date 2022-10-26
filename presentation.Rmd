@@ -82,22 +82,47 @@ The most common shape is light,it is much more than the next triangle,that means
 
 class: inverse, middle, center
 
-# Using xaringan
+#2.The area that has the highest frequency of UFO Sightings
 
 ---
+In this question, we use variable "country" to find out the country with highest number of UFO Sightings.(The variable "country" with "NA" is named as Other.)
 
-# xaringan
-
-- The presentation is created using the `xaringan` package
-
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
+```{r,echo = FALSE}
+complete %>%
+  mutate(country = 
+           case_when(
+             country == "au" ~ "Australia",
+             country == "ca" ~ "Canada",
+             country == "de" ~ "Germany",
+             country == "gb" ~ "Great Britain",
+             country == "us" ~ "United States of America",
+             TRUE ~ "Other"
+        )) %>%
+  count(country) %>%
+  arrange(desc(n)) %>%
+  rename(number = n) 
+```
+We find the United States of America has the highest number of UFO Sightings.
+---
+We can also use variable "state" and "city" to find the city with highest number of UFO Sightings in US.
+```{r recode-country, echo = FALSE}
+complete %>%
+  mutate(country = 
+           case_when(
+             country == "au" ~ "Australia",
+             country == "ca" ~ "Canada",
+             country == "de" ~ "Germany",
+             country == "gb" ~ "Great Britain",
+             country == "us" ~ "United States of America",
+             TRUE ~ "Other"
+        )) %>%
+  filter(country == "United States of America")%>%
+  count(city,state) %>%
+  arrange(desc(n)) %>%
+  rename(number = n)
+```
 
 ---
-
 # Layouts
 
 You can use plain text
@@ -129,7 +154,7 @@ or text in two columns $^*$
 ```{r recode-species, echo = FALSE}
 # In this chunk I'm doing a bunch of analysis that I don't want to present 
 # in my slides. But I need the resulting data frame for a plot I want to present.
-iris_modified <- iris %>%
+iris_modified<-iris %>%
   mutate(Species = fct_other(Species, keep = "setosa"))
 ```
 

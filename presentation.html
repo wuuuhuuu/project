@@ -103,22 +103,45 @@ The most common shape is light,it is much more than the next triangle,that means
 
 class: inverse, middle, center
 
-# Using xaringan
+#2.The area that has the highest frequency of UFO Sightings
 
 ---
+In this question, we use variable "country" to find out the country with highest number of UFO Sightings.(The variable "country" with "NA" is named as Other.)
 
-# xaringan
 
-- The presentation is created using the `xaringan` package
+```
+## # A tibble: 6 × 2
+##   country                  number
+##   &lt;chr&gt;                     &lt;int&gt;
+## 1 United States of America  70293
+## 2 Other                     12561
+## 3 Canada                     3266
+## 4 Great Britain              2050
+## 5 Australia                   593
+## 6 Germany                     112
+```
+We find the United States of America has the highest number of UFO Sightings.
+---
+We can also use variable "state" and "city" to find the city with highest number of UFO Sightings in US.
 
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
+```
+## # A tibble: 15,653 × 3
+##    city        state number
+##    &lt;chr&gt;       &lt;chr&gt;  &lt;int&gt;
+##  1 seattle     wa       568
+##  2 phoenix     az       484
+##  3 las vegas   nv       389
+##  4 los angeles ca       372
+##  5 san diego   ca       358
+##  6 portland    or       351
+##  7 houston     tx       313
+##  8 chicago     il       294
+##  9 tucson      az       258
+## 10 miami       fl       247
+## # … with 15,643 more rows
+```
 
 ---
-
 # Layouts
 
 You can use plain text
@@ -160,7 +183,7 @@ or text in two columns `\(^*\)`
 - goes here
 ]
 .pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-4-1.png" width="100%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
 ]
 
 ---
