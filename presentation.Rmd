@@ -23,6 +23,10 @@ library(knitr)
 library(xaringanthemer)
 ```
 
+```{r load-data, include = FALSE}
+complete <- read_csv("complete.csv")
+```
+
 ```{r setup, include=FALSE}
 # For better figure resolution
 knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618, out.width = "80%")
@@ -49,10 +53,9 @@ Our analysis will seek to answer the following questions:
 3.How long has the UFO been around on average?
 
 ---
-
-```{r analysis}
-
-
+This is the output of our data frame in the slides.
+```{r,echo = FALSE}
+ glimpse(complete)
 ```
 ---
 
@@ -63,14 +66,16 @@ class: inverse, center, middle
 ---
 We use shape variable to solve this question
 
-```{r}
+```{r,echo = FALSE}
 complete%>%
   count(shape)%>%
   arrange(desc(n))
 
+
 ```
 We find UFOs have 30 different shapes,they also contain unknown shapes,so maybe there are more shapes.
-The most common shape is light,it is much more than the next triangle,that means if UFOs are real,it's probably have light shape and it's consistent with people's impression of UFOs. 
+
+The most common shape is light,it is much more than the next triangle,that means if UFOs are real,it's probably have light shape.
 
 ---
 
