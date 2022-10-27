@@ -1,7 +1,7 @@
 ---
 title: "UFO Sightings"
 subtitle: ""
-author: "???? <br> Du Shi,Kunning Zhang,Wenhui Zhang,Zhaojun Meng,Zhe Xue"
+author: " <br> Du Shi,Kunning Zhang,Wenhui Zhang,Zhaojun Meng,Zhe Xue"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -43,18 +43,18 @@ class: center, middle
 
 ## A statement of the dataset and our research question
 
-For our final project,We will use UFO Sightings Dataset,which was collected by NATIONAL UFO REPORTING CENTER    (NUFORC).It contains 88875 records of reported UFO Sightings from 1906-2014.
+For our final project,We will use UFO Sightings Dataset,which was collected by NATIONAL UFO REPORTING CENTER (NUFORC).It contains 88875 records of reported UFO Sightings from 1906-2014.
    
 Our analysis will seek to answer the following questions:
    
-1.What shape of UFO was recorded,and what is the most common shape?
+1.What kinds of shape of UFO were recorded,and what is the most common shape?
 
 2.Which area has the highest frequency of UFO Sightings? 
 
-3.which hemisphere has more UFO sighting appeared?
+3.Which hemisphere has more UFO sighting appeared?
 
 ---
-This is the output of our data frame in the slides.
+This is the output of our data.
 ```{r,echo = FALSE}
  glimpse(complete)
 ```
@@ -137,7 +137,7 @@ We will first look at the sightings happened in equator.
 equator <- filter(complete, latitude== "0")
 count(equator, latitude)
 ```
-Then look at the sightings in southernhimisphere
+Then look at the sightings in southern hemisphere
 
 ```{r,echo = FALSE}
 southernhemisphere <- filter(complete,latitude < "0")
@@ -149,107 +149,20 @@ count(southernhemisphere, latitude) %>%
 
 
 ---
-Then look at the sightings in northernhimisphere.
+Then look at the sightings in northern hemisphere.
  
 ```{r,echo = FALSE}
 northernhemisphere <- filter(complete, latitude > "0")
 count(northernhemisphere, latitude) %>%
   arrange(desc(n))
 ```
-From the data, we can find that it is clear that if UFO sighting is real, then it is more likely to be seen in northernhimisphere.
+From the data, we can find that it is clear that if UFO sighting is real, then it is more likely to be seen in northern hemisphere.
 
 ---
 
+#Thanks!
 
-# Plots
-
-```{r recode-species, echo = FALSE}
-# In this chunk I'm doing a bunch of analysis that I don't want to present 
-# in my slides. But I need the resulting data frame for a plot I want to present.
-iris_modified<-iris %>%
-  mutate(Species = fct_other(Species, keep = "setosa"))
+```{r echo = FALSE, out.width = "60%", fig.align = "center"}
+include_graphics("img/ufo.jpg")
 ```
 
-```{r plot-iris, echo = FALSE}
-# Code hidden with echo = FALSE
-# Uses modified iris dataset from previous chunk
-# Play around with height and width until you're happy with the look
-ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
-  geom_point() + 
-  theme_minimal() # theme options: https://ggplot2.tidyverse.org/reference/ggtheme.html
-```
-
----
-
-## Plot and text
-
-.pull-left[
-- Some text
-- goes here
-]
-.pull-right[
-```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-# see how I changed out.width and fig.width from defaults
-# to make the figure bigger
-ggplot(penguins, aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot() +
-  theme_minimal()
-```
-]
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r iris-table, echo = FALSE}
-kable(head(iris), format = "html")
-```
-
----
-
-# Images
-
-```{r castle, echo = FALSE, out.width = "60%", fig.align = "center", fig.cap = "Image credit: Photo by Jörg Angeli on Unsplash."}
-include_graphics("https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
-```
-
-Or you can also include a full page image. See next slide.
-
----
-
-background-image: url(https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)
-
----
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
-# Feeling adventurous?
-
-- Want to find out more about `xaringan`? See https://slides.yihui.name/xaringan/#1.
-
-- You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
-- But some of you might want to play around with slide styling. The 
-`xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer.
-
-- And if you want more bells and whistles, there is also `xaringanExtra`: https://pkg.garrickadenbuie.com/xaringanExtra.
