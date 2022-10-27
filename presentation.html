@@ -49,7 +49,7 @@ Our analysis will seek to answer the following questions:
 
 2.Which area has the highest frequency of UFO Sightings? 
 
-3.How long has the UFO been around on average?
+3.which hemisphere has more UFO sighting appeared?
 
 ---
 This is the output of our data frame in the slides.
@@ -97,7 +97,7 @@ We use shape variable to solve this question
 
 We find UFOs have 30 different shapes,they also contain unknown shapes,so maybe there are more shapes.
 
-The most common shape is light,it is much more than the next triangle,that means if UFOs are real,it's probably have light shape.
+The most common shape is light,it is much more than the next triangle.
 
 ---
 
@@ -142,31 +142,70 @@ We can also use variable "state" and "city" to find the city with highest number
 ```
 
 ---
-# Layouts
 
-You can use plain text
+class: inverse, middle, center
 
-- or bullet points
-
-.pull-left[
-or text in two columns `\(^*\)`
-]
-.pull-right[
-- like
-- this
-]
-
-.footnote[
-[*] And add footnotes
-]
-
----
-
-# Code
-
+#3.The hemisphere that have more UFO seighting
 
 
 ---
+In this question, variable "latitude" is used to discuss the question.
+We will first look at the sightings happened in equator.
+
+
+```
+## # A tibble: 1 × 2
+##   latitude     n
+##   &lt;chr&gt;    &lt;int&gt;
+## 1 0         1494
+```
+Then look at the sightings in southernhimisphere
+
+
+```
+## # A tibble: 502 × 2
+##    latitude       n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 -33.861481    89
+##  2 -37.813938    74
+##  3 -31.95224     53
+##  4 -27.47101     48
+##  5 -34.928661    41
+##  6 -14.599413    33
+##  7 -36.84846     32
+##  8 -25.274398    20
+##  9 -35.27603     18
+## 10 -33.924868    16
+## # … with 492 more rows
+```
+
+
+
+
+---
+Then look at the sightings in northernhimisphere.
+ 
+
+```
+## # A tibble: 19,069 × 2
+##    latitude       n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 47.6063889   627
+##  2 40.7141667   601
+##  3 33.4483333   511
+##  4 36.1750000   417
+##  5 34.0522222   414
+##  6 32.7152778   384
+##  7 45.5236111   362
+##  8 41.8500000   336
+##  9 29.7630556   328
+## 10 32.2216667   264
+## # … with 19,059 more rows
+```
+From the data, we can find that it is clear that if UFO sighting is real, then it is more likely to be seen in northernhimisphere.
+
+---
+
 
 # Plots
 
@@ -183,7 +222,7 @@ or text in two columns `\(^*\)`
 - goes here
 ]
 .pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-8-1.png" width="100%" /&gt;
 ]
 
 ---
