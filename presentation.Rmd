@@ -74,9 +74,9 @@ complete%>%
 
 ```
 
-We find UFOs have 30 different shapes,they also contain unknown shapes,so maybe there are more shapes.
+We find UFOs have 30 different shapes,they also contain unknown shape,so maybe they have more shapes.
 
-The most common shape is light,it is much more than the next triangle.
+The most common shape is light,it is much more than the triangle.
 
 ---
 
