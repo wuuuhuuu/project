@@ -149,7 +149,8 @@ class: inverse, middle, center
 
 
 ---
-In this question, variable "latitute" is used to discuss the question.
+In this question, variable "latitude" is used to discuss the question.
+We will first look at the sightings happened in equator.
 
 
 ```
@@ -158,48 +159,23 @@ In this question, variable "latitute" is used to discuss the question.
 ##   &lt;chr&gt;    &lt;int&gt;
 ## 1 0         1494
 ```
+Then look at the sightings in southernhimisphere
 
-```r
-northernhemisphere &lt;- filter(complete, latitude &gt; "0")
-count(northernhemisphere, latitude)
-```
-
-```
-## # A tibble: 19,069 × 2
-##    latitude      n
-##    &lt;chr&gt;     &lt;int&gt;
-##  1 1.352083     27
-##  2 1.46343       3
-##  3 1.530976      2
-##  4 1.537886      3
-##  5 1.613938      1
-##  6 1.977247      1
-##  7 1/10/2009     7
-##  8 1/10/2014     1
-##  9 1/11/2002     1
-## 10 1/12/2012     3
-## # … with 19,059 more rows
-```
-
-```r
-southernhemisphere &lt;- filter(complete,latitude &lt; "0")
-count(southernhemisphere, latitude)
-```
 
 ```
 ## # A tibble: 502 × 2
-##    latitude      n
-##    &lt;chr&gt;     &lt;int&gt;
-##  1 -0.023559     2
-##  2 -0.180653     5
-##  3 -0.589724     1
-##  4 -0.755775     1
-##  5 -0.789275     1
-##  6 -0.829278     1
-##  7 -0.95         7
-##  8 -1.038757     1
-##  9 -1.292066     3
-## 10 -1.396389     1
+##    latitude       n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 -33.861481    89
+##  2 -37.813938    74
+##  3 -31.95224     53
+##  4 -27.47101     48
+##  5 -34.928661    41
+##  6 -14.599413    33
+##  7 -36.84846     32
+##  8 -25.274398    20
+##  9 -35.27603     18
+## 10 -33.924868    16
 ## # … with 492 more rows
 ```
 
@@ -207,6 +183,29 @@ count(southernhemisphere, latitude)
 
 
 ---
+Then look at the sightings in northernhimisphere.
+ 
+
+```
+## # A tibble: 19,069 × 2
+##    latitude       n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 47.6063889   627
+##  2 40.7141667   601
+##  3 33.4483333   511
+##  4 36.1750000   417
+##  5 34.0522222   414
+##  6 32.7152778   384
+##  7 45.5236111   362
+##  8 41.8500000   336
+##  9 29.7630556   328
+## 10 32.2216667   264
+## # … with 19,059 more rows
+```
+From the data, we can find that it is clear that if UFO sighting is real, then it is more likely to be seen in northernhimisphere.
+
+---
+
 
 # Plots
 

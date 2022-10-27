@@ -130,26 +130,36 @@ class: inverse, middle, center
 
 
 ---
-In this question, variable "latitute" is used to discuss the question.
+In this question, variable "latitude" is used to discuss the question.
+We will first look at the sightings happened in equator.
 
 ```{r,echo = FALSE}
 equator <- filter(complete, latitude== "0")
 count(equator, latitude)
 ```
-```{r}
-northernhemisphere <- filter(complete, latitude > "0")
-count(northernhemisphere, latitude)
-```
-```{r}
-southernhemisphere <- filter(complete,latitude < "0")
-count(southernhemisphere, latitude)
+Then look at the sightings in southernhimisphere
 
+```{r,echo = FALSE}
+southernhemisphere <- filter(complete,latitude < "0")
+count(southernhemisphere, latitude) %>%
+  arrange(desc(n))
 ```
 
 
 
 
 ---
+Then look at the sightings in northernhimisphere.
+ 
+```{r,echo = FALSE}
+northernhemisphere <- filter(complete, latitude > "0")
+count(northernhemisphere, latitude) %>%
+  arrange(desc(n))
+```
+From the data, we can find that it is clear that if UFO sighting is real, then it is more likely to be seen in northernhimisphere.
+
+---
+
 
 # Plots
 
