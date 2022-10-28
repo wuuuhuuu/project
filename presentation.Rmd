@@ -47,7 +47,7 @@ For our final project,We will use UFO Sightings Dataset,which was collected by N
    
 Our analysis will seek to answer the following questions:
    
-1.What kinds of shape of UFO were recorded,and what is the most common shape?
+1.What kinds of shape were recorded,and what is the most common shape?
 
 2.Which area has the highest frequency of UFO Sightings? 
 
@@ -74,7 +74,7 @@ complete%>%
 
 ```
 
-We find UFOs have 30 different shapes,they also contain unknown shape,so maybe they have more shapes.
+We find UFO have 30 different shapes,they also contain unknown shape,so maybe they have more shapes.
 
 The most common shape is light,it is much more than the triangle.
 
